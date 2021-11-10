@@ -3,6 +3,8 @@ import Header from "../components/Header"
 import { useRouter } from "next/dist/client/router";
 import {format} from "date-fns";
 import Info from "../components/Info";
+import Map from "../components/Map";
+
 const Search = ({searchResults}) => {
 
     console.log(searchResults);
@@ -32,6 +34,9 @@ const Search = ({searchResults}) => {
                             <Info key={img} img={img} title={title} location={location} star={star} price={price} total={total} description={description}/>
                     ))}
                     </div>
+                </section>
+                <section className="hidden xl:inline-flex xl:min-w-[600px]">
+                   <Map searchResults={searchResults} />
                 </section>
             </main>
             <Footer />
